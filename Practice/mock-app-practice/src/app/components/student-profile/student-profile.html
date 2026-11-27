@@ -1,0 +1,12 @@
+<h2>Student Name: {{ studentname }}</h2>
+<p>Age: {{ age }}</p>
+
+<button
+type="button"
+(click)="changeMessage()"
+[disabled]="isDisabled"
+ class="p-2 rounded-lg shadow-md bg-green-400 font-semibold">Submit</button>
+<p>{{ message }}</p>
+
+<input class=" border rounded p-2" type="text" [(ngModel)]="studentname">
+<h2 class="font-bold">{{ studentname }}</h2>

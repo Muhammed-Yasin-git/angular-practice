@@ -1,0 +1,29 @@
+<p>pipe-demo works!</p>
+
+<h1 class="font-bold">Original:{{ userName }}</h1>
+<p>{{ userName | uppercase}}</p>
+<p>{{ userName | titlecase}}</p>
+
+<br><hr><br> 
+
+<h1 class="font-bold">Today: {{ today }}</h1>
+<p>Formatted Date: {{ today | date:'dd/MM/yyyy'}}</p>
+<p>Formatted Date: {{ today | date:'fullDate'}}</p>
+
+<br><hr><br> 
+
+<h1 class="font-bold">Orginal Price: {{ price }}</h1>
+<p>Price: {{ price | currency:'INR'}}</p>
+<p>Price: {{ price | currency:'USD'}}</p>
+
+<br><hr><br>
+
+<h1 class="font-bold">Percentage: {{ percentage | percent}}</h1>
+
+<br><hr><br>
+
+<h3  class="font-bold">5. Number Pipe</h3>
+
+<p>Original Number: {{ amount }}</p>
+
+<p>Formatted Number: {{ amount | number:'1.2-2' }}</p>

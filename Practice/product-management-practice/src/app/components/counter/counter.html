@@ -1,0 +1,20 @@
+<p>counter works!</p>
+
+<p class="font-bold text-5xl">Count: {{ counter()}}</p>
+<p class="font-bold text-5xl">Doubled Count: {{ doubleCount()}}</p>
+<button
+(click)="increment()"
+ class="m-2 rounded-lg p-2 bg-green-300">Increment</button>
+<button
+(click)="decrement()"
+ class="m-2 rounded-lg p-2 bg-red-400">Decrement</button>
+<button
+(click)="reset()"
+ class="m-2 rounded-lg p-2 bg-gray-400">Reset</button>
+
+ <button 
+ routerLink="/user/yasin"
+ class="m-2 rounded-lg p-2 bg-blue-400">User Name Display</button>
+ <button 
+ routerLink="/"
+ class="m-2 rounded-lg p-2 bg-blue-400">Home</button>

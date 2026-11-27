@@ -1,0 +1,20 @@
+<p>directive-practice works!</p>
+
+
+
+@if(showEmployees){
+    @for (employee of employees; track employee.id){
+    <h2 [ngClass]="employee.active ? 'text-green-500' : 'text-red-500'">
+        {{ employee.name }}
+    </h2>
+} @empty{
+    <p>No employees found</p>
+}
+}
+
+<button 
+(click)="toggleEmployees()"
+class="p-2 rounded-lg bg-blue-400 font-semibold">
+    Toggle Employees
+</button>
+

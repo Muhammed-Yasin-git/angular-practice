@@ -1,0 +1,27 @@
+<div class="p-5 rounded-xl shadow-md bg-white">
+  <h2 class="text-2xl font-bold text-blue-600">Student Card</h2>
+
+  <input type="text"
+   [(ngModel)] = "studentName"
+   class="border"
+  >
+
+  <h2 class="text-2xl font-bold ">Hi {{ studentName }}</h2>
+  <p>{{ studentName }} is {{ age }} old</p> 
+  <p>{{ studentName }} is in {{ department }} department</p>
+  <button
+  (click) = "changeMessage()"
+  class="bg-yellow-600 text-white px-6 py-2 rounded-lg mr-4 cursor-pointer
+         disabled:bg-gray-400 disabled:cursor-not-allowed">
+  Submit
+</button>
+
+<button
+  (click)="selectStudent()"
+  class="bg-green-600 text-white px-6 py-2 rounded-lg">
+
+  Select Student
+</button>
+
+<h2>{{ message }}</h2>
+</div>

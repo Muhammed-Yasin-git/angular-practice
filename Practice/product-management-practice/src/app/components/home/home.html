@@ -1,0 +1,13 @@
+<button 
+routerLink="/counter"
+routerLinkActive="bg-red-500"
+[routerLinkActiveOptions]="{ exact : true }"
+ class="rounded-lg p-2 font-semibold bg-green-500 m-2">Counter</button>
+<button 
+routerLink="/dashboard"
+routerLinkActive="bg-blue-500"
+[routerLinkActiveOptions]="{ exact : true }"
+ class="rounded-lg p-2 font-semibold bg-purple-500 m-2 ">Dashboard</button>
+<button 
+(click)="logout()"
+ class="rounded-lg p-2 font-semibold bg-red-600">Logout</button>

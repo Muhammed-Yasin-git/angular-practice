@@ -1,0 +1,9 @@
+<p>signup works!</p>
+
+<form [formGroup]='registrationForm' (ngSubmit)="onSubmit()">
+    <input type="text" formControlName="userName">
+    <input type="text" formControlName="email">
+    <input type="text" formControlName="password">
+
+    <button type="submit">submit</button>
+</form>

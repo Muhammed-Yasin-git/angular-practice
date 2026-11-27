@@ -1,0 +1,23 @@
+<div class="m-20 bg-green-300 w-sm p-3 ">
+    <h2 class="font-bold text-4xl ">Login</h2>
+    <hr>
+  <div class="flex flex-col  items-center">
+    <input
+    class="rounded border m-3 mt-5 w-80 p-1"
+    type="text"
+    [(ngModel)]="username"
+    placeholder="Enter username"
+  />
+
+  <input
+    class="rounded border m-3 w-80 p-1"
+    type="password"
+    [(ngModel)]="password"
+    placeholder="Enter password"
+  />
+
+  <button 
+  class="rounded-lg shadow-md bg-white p-2"
+  (click)="login()">Login</button>
+  </div>
+</div>

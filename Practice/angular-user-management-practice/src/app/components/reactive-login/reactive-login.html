@@ -1,0 +1,10 @@
+
+<form [formGroup]="login" (ngSubmit)="onSubmit()">
+    <label class="m-2" for="email">Email:</label>
+    <input class="border rounded " type="email" formControlName="email">
+    <br><br>
+    <label class="m-2" for="password">Password:</label>
+    <input class="border rounded " type="password" formControlName="password">
+    <br><br>
+    <button class="rounded-lg p-2 bg-green-500" [disabled]="login.invalid">Login</button>
+</form>

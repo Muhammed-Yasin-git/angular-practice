@@ -1,0 +1,22 @@
+<h2>Login Form</h2>
+
+<form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+  <input
+    class="border rounded m-3"
+    placeholder="Type name"
+    type="email"
+    name="email"
+    [(ngModel)]="email"
+    required
+  />
+  <input
+    class="border rounded m-3"
+    placeholder="Enter password"
+    type="password"
+    name="password"
+    [(ngModel)]="password"
+    required
+    minlength="6"
+  />
+  <button class="bg-green-400 p-2 rounded-lg">Login</button>
+</form>

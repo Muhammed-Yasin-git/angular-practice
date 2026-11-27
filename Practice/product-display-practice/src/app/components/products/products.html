@@ -1,0 +1,10 @@
+<p>products works!</p>
+
+@for (product of products(); track product.id) {
+  <div class="border rounded-lg p-4 m-3">
+    <h2>{{ product.title }}</h2>
+    <p>Price: {{ product.price }}</p>
+    <p>{{ product.description }}</p>
+    <img [src]="product.thumbnail" [alt]="product.title" />
+  </div>
+}

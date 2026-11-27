@@ -1,0 +1,43 @@
+<div class="max-w-3xl mx-auto mt-10 p-6">
+  <h2 class="text-2xl font-bold mb-6">My Tasks</h2>
+  <a routerLink="/add-task" class="inline-block mb-6 bg-blue-500 text-white px-4 py-2 rounded-lg">
+    + Add Task
+  </a>
+  @if (tasks().length > 0) {
+    <div class="space-y-4">
+      @for (task of tasks(); track task.id) {
+        <div class="border rounded-lg p-4 shadow-sm">
+          <h3 class="text-lg font-semibold">{{ task.title }}</h3>
+
+          <p class="text-gray-600">{{ task.description }}</p>
+
+          <div class="flex gap-4 mt-3 text-sm">
+            <span>Status: {{ task.status }}</span>
+            <span>Priority: {{ task.priority }}</span>
+          </div>
+
+          <a
+            [routerLink]="['/tasks', task.id]"
+            class="inline-block mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg"
+          >
+            View Task
+          </a>
+          <a
+            [routerLink]="['/edit-task', task.id]"
+            class="inline-block mt-4 ml-2 bg-yellow-500 text-white px-4 py-2 rounded-lg"
+          >
+            Edit Task
+          </a>
+          <button
+            (click)="deleteTask(task.id)"
+            class="inline-block mt-4 ml-2 bg-red-600 text-white px-4 py-2 rounded-lg"
+          >
+            Delete Task
+          </button>
+        </div>
+      }
+    </div>
+  } @else {
+    <p class="text-gray-500">No tasks available. Add your first task!</p>
+  }
+</div>

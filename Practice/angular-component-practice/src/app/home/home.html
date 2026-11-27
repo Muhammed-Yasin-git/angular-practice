@@ -1,0 +1,27 @@
+<div class="flex flex-col items-center justify-center gap-4">
+
+  <h1 class="text-3xl font-bold text-red-600">
+    Welcome to Angular!
+  </h1>
+
+  <p class="text-gray-600">
+    My first Angular application.
+  </p>
+
+  <div class="flex gap-6">
+    <app-student-card
+    (selected)="receiveStudent($event)"
+    [department]="department">
+  </app-student-card>
+
+  <app-labour-card></app-labour-card>
+  <app-registration></app-registration>
+  </div>
+
+  <p>Selected Student: {{ selectedStudent }}</p>
+
+  <button class="bg-red-600 text-white px-6 py-2 rounded-lg">
+    Click Me
+  </button>
+
+</div>

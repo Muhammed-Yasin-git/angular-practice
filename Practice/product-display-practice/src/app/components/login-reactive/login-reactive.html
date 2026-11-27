@@ -1,0 +1,45 @@
+<p>login-reactive works!</p>
+
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <input
+    class="rounded border m-2"
+    placeholder="user name"
+    type="text"
+    formControlName="userName"
+  />
+  @if (loginForm.get('userName')?.touched && loginForm.get('userName')?.errors?.['required']) {
+    <p class="text-red-400">Username required</p>
+  }
+  @if (loginForm.get('userName')?.errors?.['minlength']) {
+    <p class="text-red-400">Minimum 3 characters</p>
+  }
+  <input
+    class="rounded border m-2"
+    placeholder="enter email"
+    formControlName="email"
+    type="email"
+  />
+  @if (loginForm.get('email')?.errors?.['email']) {
+    <p class="text-red-400">email format required</p>
+  }
+  <input
+    class="rounded border m-2"
+    placeholder="enter your age"
+    formControlName="age"
+    type="number"
+  />
+  @if (loginForm.get('age')?.touched && loginForm.get('age')?.errors?.['min']) {
+    <p class="text-red-300">minimum Age 18</p>
+  }
+  <input
+    class="rounded border m-2"
+    placeholder="enter password"
+    formControlName="password"
+    type="password"
+  />
+  @if (loginForm.get('password')?.errors?.['minlength']) {
+    <p class="text-red-300">minimum 6 characters</p>
+  }
+
+  <button class="rounded-lg p-2 bg-yellow-200" [disabled]="loginForm.invalid" type="submit">submit</button>
+</form>

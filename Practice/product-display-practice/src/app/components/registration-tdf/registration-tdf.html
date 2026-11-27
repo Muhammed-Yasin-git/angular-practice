@@ -1,0 +1,75 @@
+<p>registration-tdf works!</p>
+
+<form #registration="ngForm" (ngSubmit)="onSubmit(registration)">
+  <input
+    class="rounded border m-2"
+    placeholder="Enter Name"
+    type="text"
+    [(ngModel)]="userName"
+    name="userName"
+    required
+    minlength="3"
+    #userControl="ngModel"
+  />
+  @if (userControl.touched && userControl.errors?.['required']) {
+    <p class="text-red-400">Username is required</p>
+  }
+
+  @if (userControl.errors?.['minlength']) {
+    <p class="text-red-400">Minimum 3 characters required</p>
+  }
+  <input
+    class="rounded border m-2"
+    placeholder="Enter Email"
+    type="email"
+    [(ngModel)]="email"
+    name="email"
+    required
+    email
+    #emailControl="ngModel"
+  />
+  @if(emailControl.touched && emailControl.errors?.['required']){
+    <p class="text-red-400">email required</p>
+  }
+  @if (emailControl.errors?.['email']) {
+    <p class="text-red-400">email format needed</p>
+  }
+  <input
+    class="rounded border m-2"
+    type="number"
+    [(ngModel)]="age"
+    min="18"
+    name="age"
+    required
+    #ageControl="ngModel"
+  />
+  @if(ageControl.touched && ageControl.errors?.['required']){
+    <p class="text-red-400">age required</p>
+  }
+  @if(ageControl.errors?.['min']){
+    <p class="text-red-400">min age 18</p>
+  }
+  <input
+    class="rounded border m-2"
+    placeholder="password"
+    type="password"
+    [(ngModel)]="password"
+    name="password"
+    required
+    minlength="6"
+    #passwordControl="ngModel"
+  />
+  @if(passwordControl.touched && passwordControl.errors?.['required']){
+    <p class="text-red-400">password required</p>
+  }
+  @if(passwordControl.errors?.['minlength']){
+    <p class="text-red-400">minimum 6 characters required</p>
+  }
+  <button class="rounded-lg p-2 bg-green-400" type="submit" [disabled]="registration.invalid">
+    submit
+  </button>
+</form>
+
+<p>{{ userName }}</p>
+<p>{{ email }}</p>
+<p>{{ age }}</p>

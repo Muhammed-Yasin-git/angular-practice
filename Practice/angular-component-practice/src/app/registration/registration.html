@@ -1,0 +1,26 @@
+<form [formGroup]="registrationForm" (ngSubmit)="submitForm()">
+
+  <input
+    type="text"
+    formControlName="userName"
+    placeholder="Enter your name"
+  >
+
+  <input
+    type="email"
+    formControlName="email"
+    placeholder="Enter your email"
+  >
+    @if (
+    registrationForm.controls.userName.invalid &&
+    registrationForm.controls.userName.touched
+  ) {
+    <p class="text-red-500">
+      Username is required and must contain at least 3 characters.
+    </p>
+  }
+
+
+  <button type="submit">Register</button>
+
+</form>

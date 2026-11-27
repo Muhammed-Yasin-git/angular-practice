@@ -1,0 +1,10 @@
+<p>products works!</p>
+
+@for (product of products(); track product.id) {
+  <div class="flex p-2 m-2 gap-5">
+    <p>{{ product.title }}</p>
+    <button
+    (click)="viewDetails(product.id)"
+     class="rounded-lg bg-blue-400 p-1">details</button>
+  </div>
+}

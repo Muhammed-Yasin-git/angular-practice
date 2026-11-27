@@ -1,0 +1,61 @@
+
+<div class="min-h-screen bg-gray-100">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md px-8 py-4 flex items-center justify-between">
+
+      <h1 class="text-2xl font-bold text-blue-600">
+        MyApp
+      </h1>
+
+      <div class="flex items-center gap-4">
+
+        <a
+          routerLink="/home"
+          routerLinkActive="text-blue-600"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="font-medium text-gray-600 hover:text-blue-600">
+          Home
+        </a>
+
+        <a
+          routerLink="/dashboard/yasin"
+          routerLinkActive="text-blue-600"
+          class="font-medium text-gray-600 hover:text-blue-600">
+          Dashboard
+        </a>
+
+        <button
+          (click)="logout()"
+          class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg">
+          Logout
+        </button>
+
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex flex-col items-center justify-center min-h-[80vh]">
+
+      <h1 class="text-4xl font-bold text-gray-800">
+        Welcome Home!
+      </h1>
+
+      <p class="text-gray-500 mt-3">
+        You have successfully logged in.
+      </p>
+
+      <a
+        routerLink="/dashboard/yasin"
+        class="mt-6 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg">
+        Go to Dashboard
+      </a>
+      <a
+        routerLink="/products"
+        class="mt-6 bg-green-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg">
+        Products
+      </a>
+
+    </main>
+
+</div>
